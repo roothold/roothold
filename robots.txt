@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://roothold.vercel.app/sitemap.xml
