@@ -151,6 +151,8 @@ nav.hide{transform:translateY(-100%)}
 .why-media img:nth-child(2){border-radius:44% 56% 62% 38%/49% 40% 60% 51%}
 .why-media img:nth-child(3){border-radius:52% 48% 40% 60%/58% 42% 58% 42%}
 .why-media img:nth-child(4){border-radius:40% 60% 55% 45%/45% 55% 45% 55%;margin-top:-24px}
+.why-media.why-single{grid-template-columns:1fr}
+.why-media.why-single img{aspect-ratio:16/11;border-radius:28px;margin-top:0;box-shadow:0 40px 90px -50px rgba(14,32,24,.5)}
 .why-div{border:none;border-top:2px dotted #B6C6B4;margin:var(--s6) 0 var(--s4)}
 .why-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
 .why-col h3{font-family:'Fraunces',serif;font-size:22px;letter-spacing:-.01em;color:var(--ink)}
@@ -315,10 +317,10 @@ footer{background:var(--deep);color:#C3CFC6;padding:var(--s6) 0 var(--s4);font-s
   <div class="wrap">
     <div class="exp-intro">
       <div class="exp-media reveal">
-        <img src="invest.jpg" alt="">
-        <img src="innovate.jpg" alt="">
-        <img src="partnership.jpg" alt="">
-        <img src="work.jpg" alt="">
+        <img src="expA.jpg" alt="">
+        <img src="expB.jpg" alt="">
+        <img src="expC.jpg" alt="">
+        <img src="expD.jpg" alt="">
       </div>
       <div class="exp-copy reveal">
         <div class="eyebrow gold">The Platform</div>
@@ -362,11 +364,8 @@ footer{background:var(--deep);color:#C3CFC6;padding:var(--s6) 0 var(--s4);font-s
         <p>Our partners aren't spectators. Municipalities, owners, and investors sit at the same table and share in what we create — because the aim isn't a single deal, it's enduring prosperity for the whole community.</p>
         <a class="btn green" href="#contact" data-persona="Partnership">Partner with us</a>
       </div>
-      <div class="why-media reveal">
-        <img src="invest.jpg" alt="">
-        <img src="partnership.jpg" alt="">
-        <img src="work.jpg" alt="">
-        <img src="innovate.jpg" alt="">
+      <div class="why-media why-single reveal">
+        <img src="whyhero.jpg" alt="">
       </div>
     </div>
     <hr class="why-div reveal">
@@ -392,7 +391,7 @@ footer{background:var(--deep);color:#C3CFC6;padding:var(--s6) 0 var(--s4);font-s
         </div>
         <div class="asof">Operating metrics as of August 2026. Roadmap figures are targets, not guarantees.</div>
       </div>
-      <div class="num-media reveal"><img src="surplus.jpg" alt=""></div>
+      <div class="num-media reveal"><img src="invest.jpg" alt=""></div>
     </div>
   </div>
 </section>
