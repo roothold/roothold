@@ -759,7 +759,8 @@ if (pRail) {
   document.getElementById('portPrev').addEventListener('click', () => pRail.scrollBy({left: -step(), behavior: 'smooth'}));
   document.getElementById('portNext').addEventListener('click', () => pRail.scrollBy({left: step(), behavior: 'smooth'}));
   let pt; pRail.addEventListener('scroll', () => { clearTimeout(pt); pt = setTimeout(upd, 90); }, {passive: true});
-  upd();
+  pRail.scrollLeft = 0; upd();
+  addEventListener('load', () => { pRail.scrollLeft = 0; upd(); });
 }
 
 // testimonials carousel (dots + arrows)
