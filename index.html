@@ -85,8 +85,8 @@ nav.scrolled .nav-toggle span{background:var(--ink)}
 @media(max-width:740px){.nav-inner{height:64px}.nav-inner .logo{height:38px}}
 
 /* HERO — full-bleed background video */
-.hero{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:96px var(--s3) 68px;color:#fff}
-.hero .bgvideo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:96px var(--s3) 68px;color:#fff;background:#1C1C1E}
+.hero .bgvideo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;background:#1C1C1E}
 .hero .overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(9,20,14,.5),rgba(9,20,14,.42) 42%,rgba(9,20,14,.74))}
 .hero .inner{position:relative;z-index:2;max-width:1000px}
 .hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:var(--s3)}
@@ -375,7 +375,7 @@ nav.scrolled .nav-links a.active{color:var(--accent-strong)}
 </nav>
 
 <header class="hero" id="top">
-  <video class="bgvideo" autoplay muted loop playsinline preload="metadata" poster="invest.jpg" aria-label="RootHold — building what lasts">
+  <video class="bgvideo" autoplay muted loop playsinline preload="metadata" aria-label="RootHold — building what lasts">
     <source src="hero.mp4" type="video/mp4">
   </video>
   <div class="overlay"></div>
