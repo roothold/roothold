@@ -68,7 +68,7 @@ img{max-width:100%;display:block}
 .fl-body ul li::before{content:"";position:absolute;left:2px;top:12px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
 
 /* pull quote — full bleed dark band */
-.fl-quote{background:var(--deep);color:#fff;margin:64px 0;padding:76px 0}
+.fl-quote{background:var(--deep);color:#fff;margin:64px 0;padding:76px 0;border-radius:20px}
 .fl-quote .in{max-width:940px;margin:0 auto;padding:0 32px}
 .fl-quote blockquote{font-family:'Fraunces',serif;font-weight:400;font-style:italic;
   font-size:clamp(28px,4.6vw,50px);line-height:1.16;letter-spacing:-.02em;color:#fff}
