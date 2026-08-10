@@ -52,14 +52,41 @@ img{max-width:100%;display:block}
 .util a{color:#C9D6CE;transition:.2s}.util a:hover{color:var(--gold-soft)}
 .util .u-r{display:flex;gap:22px;align-items:center}
 /* ---- masthead ---- */
-.mast{background:var(--cream);border-bottom:1px solid var(--line);text-align:center;padding:54px 0 0}
+.mast{background:var(--cream);text-align:center;padding:54px 0 34px}
 .mast .word{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(52px,9vw,104px);letter-spacing:-.03em;color:var(--green);line-height:.92}
 .mast .word em{font-style:italic;font-weight:400;color:var(--gold)}
 .mast .by{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--mut);margin-top:14px;font-weight:600}
 .mast .tag{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(17px,2.2vw,22px);color:var(--ink);margin:20px auto 30px;max-width:640px;font-weight:400}
-.flnav{display:flex;gap:34px;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--line);padding:16px 0}
-.flnav a{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);transition:.2s;position:relative}
+.flnav{position:sticky;top:0;z-index:45;display:flex;gap:30px;justify-content:center;flex-wrap:wrap;background:rgba(245,241,231,.95);backdrop-filter:saturate(150%) blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0}
+.flnav a{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);transition:.2s;position:relative}
 .flnav a:hover{color:var(--gold)}
+/* metrics strip */
+.metrics{background:var(--deep);color:#DDE7E0}
+.metrics .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 34px;padding:15px 32px;font-size:13px}
+.metrics .m{display:flex;align-items:baseline;gap:9px}
+.metrics .m b{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--gold-soft);letter-spacing:-.01em}
+.metrics .m span{color:#AFC0B6;letter-spacing:.02em}
+.metrics .sep{color:rgba(255,255,255,.16)}
+@media(max-width:640px){.metrics .sep{display:none}.metrics .wrap{gap:8px 22px}}
+/* card meta / bylines */
+.c-meta{font-size:12px;color:var(--soft);letter-spacing:.02em;margin-bottom:12px}
+.c-meta b{color:var(--mut);font-weight:600}
+.lede .byline{font-size:13px;color:var(--soft);margin-top:8px;letter-spacing:.02em}
+.lede .byline b{color:var(--mut);font-weight:600}
+/* most read */
+.mostread{background:var(--cream)}
+.mr-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:44px;align-items:start}
+.mr-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(28px,3.4vw,40px);color:var(--green);margin-top:10px;line-height:1.05}
+.mr-list{list-style:none;margin:0;padding:0}
+.mr-list li{border-top:1px solid var(--line)}
+.mr-list li:last-child{border-bottom:1px solid var(--line)}
+.mr-list a{display:flex;align-items:center;gap:22px;padding:17px 4px;transition:.25s var(--ease)}
+.mr-list a:hover{padding-left:14px}
+.mr-list .n{font-family:'Fraunces',serif;font-weight:600;font-size:30px;color:var(--gold);min-width:46px}
+.mr-list .mk{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
+.mr-list .mt{font-family:'Fraunces',serif;font-weight:500;font-size:22px;color:var(--green);letter-spacing:-.015em;line-height:1.12}
+.mr-list a:hover .mt{color:var(--gold)}
+@media(max-width:820px){.mr-grid{grid-template-columns:1fr;gap:22px}}
 /* ---- lede / featured ---- */
 section{padding:72px 0}
 .lede{display:grid;grid-template-columns:1.05fr 1.15fr;gap:56px;align-items:center}
@@ -166,15 +193,20 @@ section{padding:72px 0}
     <div class="by">A Journal by RootHold</div>
     <p class="tag">Dispatches on the founders, cities, and partners building community that lasts.</p>
   </div>
-  <nav class="flnav">
-    <a href="#featured">The Vision</a>
-    <a href="#featured">Companies</a>
-    <a href="#featured">Cities</a>
-    <a href="#featured">Capital</a>
-    <a href="#featured">Community</a>
-    <a href="#featured-in">Get Featured</a>
-  </nav>
 </header>
+<nav class="flnav">
+  <a href="roothold-intro.html">The Vision</a>
+  <a href="surplus-pods.html">Companies</a>
+  <a href="cities.html">Cities</a>
+  <a href="anchor-economy.html">Capital</a>
+  <a href="belonging.html">Community</a>
+  <a href="#featured-in">Get Featured</a>
+</nav>
+<div class="metrics"><div class="wrap">
+  <div class="m"><b>4</b><span>Operating companies</span></div><span class="sep">/</span>
+  <div class="m"><b>8</b><span>Surplus Pods live</span></div><span class="sep">/</span>
+  <div class="m"><b>100</b><span>Companies by 2030</span></div>
+</div></div>
 
 <!-- lede / featured story -->
 <section id="featured">
@@ -188,6 +220,7 @@ section{padding:72px 0}
           <a class="readlink" href="roothold-intro.html">Read the issue <span class="ar">&rarr;</span></a>
           <span>&middot; 6 min read</span>
         </div>
+        <div class="byline"><b>By FirstLight Editorial</b> &middot; June 18, 2026</div>
       </div>
       <div class="l-media"><img src="roothold-campus.jpg" alt="A RootHold campus at dawn"></div>
     </article>
@@ -208,6 +241,7 @@ section{padding:72px 0}
         <span class="kicker c-kick">Companies &middot; Retail Technology</span>
         <h3>Introducing Surplus Pods</h3>
         <p>The autonomous, 24/7 store that lives inside the buildings where people already are &mdash; turning underused square footage into a premium amenity and a new stream of revenue.</p>
+        <div class="c-meta"><b>FirstLight Editorial</b> &middot; July 2, 2026 &middot; 5 min read</div>
         <a class="c-read" href="surplus-pods.html">Read &rarr;</a>
       </article>
 
@@ -216,6 +250,7 @@ section{padding:72px 0}
         <span class="kicker c-kick">Cities</span>
         <h3><a href="cities.html">Why cities compete to be chosen</a></h3>
         <p>Inside the new economics of place: how a selective national program flips the leverage in every incentive conversation &mdash; and what forward cities are doing about it.</p>
+        <div class="c-meta"><b>FirstLight Editorial</b> &middot; July 16, 2026 &middot; 5 min read</div>
         <a class="c-read" href="cities.html">Read &rarr;</a>
       </article>
 
@@ -224,6 +259,7 @@ section{padding:72px 0}
         <span class="kicker c-kick">Capital</span>
         <h3><a href="anchor-economy.html">The anchor economy</a></h3>
         <p>Durable assets, a compounding network, and why belonging is a moat &mdash; a field guide for the partners backing what lasts.</p>
+        <div class="c-meta"><b>FirstLight Editorial</b> &middot; July 30, 2026 &middot; 6 min read</div>
         <a class="c-read" href="anchor-economy.html">Read &rarr;</a>
       </article>
 
@@ -232,9 +268,29 @@ section{padding:72px 0}
         <span class="kicker c-kick">Community</span>
         <h3><a href="belonging.html">Belonging by design</a></h3>
         <p>What it means to build a place people organize their lives around &mdash; and how community becomes the DNA of every partnership at RootHold.</p>
+        <div class="c-meta"><b>FirstLight Editorial</b> &middot; August 6, 2026 &middot; 4 min read</div>
         <a class="c-read" href="belonging.html">Read &rarr;</a>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- most read -->
+<section class="mostread">
+  <div class="wrap">
+    <div class="mr-grid">
+      <div class="mr-head reveal">
+        <span class="kicker">Most Read</span>
+        <h2 class="serif">What readers are on.</h2>
+      </div>
+      <ol class="mr-list reveal">
+        <li><a href="anchor-economy.html"><span class="n">01</span><span><span class="mk">Capital</span><span class="mt">The anchor economy</span></span></a></li>
+        <li><a href="cities.html"><span class="n">02</span><span><span class="mk">Cities</span><span class="mt">Why cities compete to be chosen</span></span></a></li>
+        <li><a href="roothold-intro.html"><span class="n">03</span><span><span class="mk">The Vision</span><span class="mt">Introducing RootHold</span></span></a></li>
+        <li><a href="surplus-pods.html"><span class="n">04</span><span><span class="mk">Companies</span><span class="mt">Introducing Surplus Pods</span></span></a></li>
+        <li><a href="belonging.html"><span class="n">05</span><span><span class="mk">Community</span><span class="mt">Belonging by design</span></span></a></li>
+      </ol>
     </div>
   </div>
 </section>
