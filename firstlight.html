@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FirstLight by RootHold | Dispatches on building community that lasts</title>
+<meta name="description" content="FirstLight is RootHold's journal — dispatches on the founders, cities, and partners building community that lasts. New issues published regularly.">
+<meta name="keywords" content="FirstLight, RootHold, economic development, community, founders, cities, capital partners, Surplus Pods, belonging, journal, magazine">
+<meta name="author" content="RootHold Inc.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0E2018">
+<link rel="canonical" href="https://rootholdinc.com/firstlight">
+<link rel="icon" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FirstLight by RootHold">
+<meta property="og:url" content="https://rootholdinc.com/firstlight">
+<meta property="og:title" content="FirstLight by RootHold | Dispatches on building community that lasts">
+<meta property="og:description" content="RootHold's journal — the founders, cities, and partners building what lasts. Published regularly.">
+<meta property="og:image" content="https://rootholdinc.com/roothold-campus.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FirstLight by RootHold">
+<meta name="twitter:description" content="A journal on building community that lasts.">
+<meta name="twitter:image" content="https://rootholdinc.com/roothold-campus.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"FirstLight by RootHold","alternateName":"FirstLight","url":"https://rootholdinc.com/firstlight","publisher":{"@type":"Organization","name":"RootHold Inc.","logo":"https://rootholdinc.com/logo.png"},"description":"RootHold's journal — dispatches on the founders, cities, and partners building community that lasts."}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12241C; --paper:#FFFFFF; --cream:#F5F1E7; --sand:#EAE2D0;
+  --mut:#5F6B62; --soft:#7A857D; --line:#E4E0D3;
+  --green:#153A2C; --green2:#1E4A37; --deep:#0E2018;
+  --gold:#B98A2B; --gold-soft:#E9B949; --mint:#DCF3CF;
+  --ease:cubic-bezier(.25,.1,.25,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--paper);color:var(--ink);
+  font-size:17px;line-height:1.55;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.02em;line-height:1.04}
+.serif em{font-style:italic;font-weight:400;color:var(--gold)}
+.kicker{font-family:'Inter';font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+/* ---- utility bar ---- */
+.util{background:var(--deep);color:#EAF0EC}
+.util .wrap{display:flex;align-items:center;justify-content:space-between;height:38px;font-size:12px;letter-spacing:.04em}
+.util a{color:#C9D6CE;transition:.2s}.util a:hover{color:var(--gold-soft)}
+.util .u-r{display:flex;gap:22px;align-items:center}
+/* ---- masthead ---- */
+.mast{background:var(--cream);border-bottom:1px solid var(--line);text-align:center;padding:54px 0 0}
+.mast .word{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(52px,9vw,104px);letter-spacing:-.03em;color:var(--green);line-height:.92}
+.mast .word em{font-style:italic;font-weight:400;color:var(--gold)}
+.mast .by{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--mut);margin-top:14px;font-weight:600}
+.mast .tag{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(17px,2.2vw,22px);color:var(--ink);margin:20px auto 30px;max-width:640px;font-weight:400}
+.flnav{display:flex;gap:34px;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--line);padding:16px 0}
+.flnav a{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);transition:.2s;position:relative}
+.flnav a:hover{color:var(--gold)}
+/* ---- lede / featured ---- */
+section{padding:72px 0}
+.lede{display:grid;grid-template-columns:1.05fr 1.15fr;gap:56px;align-items:center}
+.lede .l-media{border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:var(--sand)}
+.lede .l-media img{width:100%;height:100%;object-fit:cover}
+.lede h1{font-size:clamp(38px,5vw,62px);color:var(--green);margin:14px 0 20px}
+.lede .dek{font-size:19px;color:var(--mut);line-height:1.6;max-width:30em}
+.lede .meta{margin-top:26px;display:flex;align-items:center;gap:18px;font-size:13px;color:var(--soft);letter-spacing:.02em}
+.readlink{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15.5px;color:var(--green);border-bottom:1.5px solid var(--gold);padding-bottom:3px;transition:.2s}
+.readlink:hover{color:var(--gold)}
+.readlink .ar{transition:.25s}.readlink:hover .ar{transform:translateX(4px)}
+/* ---- section head ---- */
+.shead{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:40px;gap:20px;flex-wrap:wrap}
+.shead h2{font-size:clamp(26px,3.4vw,38px);color:var(--ink)}
+.shead .s-link{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+/* ---- grid ---- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 40px}
+.card{display:flex;flex-direction:column}
+.card .c-media{border-radius:5px;overflow:hidden;aspect-ratio:3/2;background:var(--sand);margin-bottom:20px;position:relative}
+.card .c-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.card:hover .c-media img{transform:scale(1.045)}
+.card .c-kick{margin-bottom:10px}
+.card h3{font-family:'Fraunces',serif;font-weight:500;font-size:25px;line-height:1.1;letter-spacing:-.02em;color:var(--green);margin-bottom:10px}
+.card p{font-size:15px;color:var(--mut);line-height:1.55;margin-bottom:14px}
+.card .c-read{font-size:13.5px;font-weight:600;letter-spacing:.02em;color:var(--green);margin-top:auto}
+.card .c-read:hover{color:var(--gold)}
+.soon{position:absolute;top:12px;left:12px;background:rgba(14,32,24,.86);color:var(--mint);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 11px;border-radius:100px}
+.card.up h3,.card.up .c-read{color:var(--ink)}
+/* ---- pitch (be featured) ---- */
+.pitch{background:var(--deep);color:#EAF0EC}
+.pitch .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.pitch .kicker{color:var(--gold-soft)}
+.pitch h2{font-size:clamp(32px,4.4vw,52px);color:#fff;margin:16px 0 20px}
+.pitch h2 em{color:var(--gold-soft);font-style:italic;font-weight:400}
+.pitch p{color:#BFCEC5;font-size:18px;line-height:1.6;max-width:34em}
+.pitch .who{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 6px}
+.pitch .who span{border:1px solid rgba(220,243,207,.28);color:var(--mint);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;letter-spacing:.03em}
+.btn{display:inline-block;background:var(--gold);color:var(--deep)!important;padding:16px 34px;border-radius:100px;font-weight:700;font-size:15.5px;transition:.3s var(--ease);cursor:pointer;font-family:inherit;border:none}
+.btn:hover{background:var(--gold-soft);transform:translateY(-1px)}
+.btn.line{background:transparent;color:#fff!important;border:1.5px solid rgba(255,255,255,.5)}
+.btn.line:hover{background:#fff;color:var(--deep)!important;border-color:#fff}
+.pitch .p-card{background:linear-gradient(160deg,#16311F,#0B1912);border:1px solid rgba(220,243,207,.14);border-radius:10px;padding:38px}
+.pitch .p-card h3{font-family:'Fraunces',serif;font-weight:500;color:#fff;font-size:24px;margin-bottom:8px}
+.pitch .p-card p{color:#AFC0B6;font-size:15px;margin-bottom:22px}
+/* ---- subscribe ---- */
+.sub{background:var(--cream)}
+.sub .wrap{text-align:center;max-width:720px}
+.sub .kicker{color:var(--gold)}
+.sub h2{font-size:clamp(30px,4vw,46px);color:var(--green);margin:14px 0 14px}
+.sub p{color:var(--mut);font-size:18px;margin-bottom:30px}
+.sform{display:flex;gap:12px;max-width:520px;margin:0 auto}
+.sform input{flex:1;padding:16px 20px;border:1.5px solid var(--line);border-radius:100px;font-family:inherit;font-size:15.5px;background:#fff;color:var(--ink)}
+.sform input:focus{outline:none;border-color:var(--gold)}
+.sform button{white-space:nowrap}
+.sub .fine{font-size:12.5px;color:var(--soft);margin-top:16px}
+/* ---- footer ---- */
+.flfoot{background:var(--deep);color:#B9C7BE;padding:64px 0 40px}
+.flfoot .top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:34px}
+.flfoot .fword{font-family:'Fraunces',serif;font-weight:600;font-size:34px;color:#fff;letter-spacing:-.02em}
+.flfoot .fword em{font-style:italic;color:var(--gold-soft);font-weight:400}
+.flfoot .ftag{font-size:14px;color:#8FA096;margin-top:8px;max-width:24em}
+.flfoot .fr{display:flex;gap:40px;flex-wrap:wrap}
+.flfoot .col h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px;font-weight:700}
+.flfoot .col a{display:block;color:#B9C7BE;font-size:14.5px;margin-bottom:9px;transition:.2s}
+.flfoot .col a:hover{color:#fff}
+.flfoot .bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:26px;font-size:13px;color:#7E8F85}
+.flfoot .bottom a{color:#7E8F85}.flfoot .bottom a:hover{color:var(--gold-soft)}
+.ig{display:inline-flex;align-items:center;gap:8px;color:#B9C7BE}.ig:hover{color:#fff}
+.ig svg{width:16px;height:16px;fill:currentColor}
+@media(max-width:900px){
+  .lede{grid-template-columns:1fr;gap:30px}
+  .lede .l-media{order:-1}
+  .grid{grid-template-columns:repeat(2,1fr);gap:36px 28px}
+  .pitch .wrap{grid-template-columns:1fr;gap:34px}
+  section{padding:56px 0}
+}
+@media(max-width:600px){
+  .wrap{padding:0 22px}
+  .util .u-r a:not(.hide-s){display:none}
+  .flnav{gap:20px}
+  .grid{grid-template-columns:1fr;gap:34px}
+  .sform{flex-direction:column;border-radius:14px}
+  .sform input,.sform button{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- utility bar -->
+<div class="util"><div class="wrap">
+  <a href="index.html">&larr; RootHold</a>
+  <div class="u-r">
+    <a href="#featured">The Latest</a>
+    <a href="#featured-in">Get Featured</a>
+    <a href="#subscribe">Subscribe</a>
+    <a href="https://instagram.com/firstlightbyrh" target="_blank" rel="noopener">@firstlightbyrh</a>
+  </div>
+</div></div>
+
+<!-- masthead -->
+<header class="mast">
+  <div class="wrap">
+    <div class="word">First<em>Light</em></div>
+    <div class="by">A Journal by RootHold</div>
+    <p class="tag">Dispatches on the founders, cities, and partners building community that lasts.</p>
+  </div>
+  <nav class="flnav">
+    <a href="#featured">The Vision</a>
+    <a href="#featured">Companies</a>
+    <a href="#featured">Cities</a>
+    <a href="#featured">Capital</a>
+    <a href="#featured">Community</a>
+    <a href="#featured-in">Get Featured</a>
+  </nav>
+</header>
+
+<!-- lede / featured story -->
+<section id="featured">
+  <div class="wrap">
+    <article class="lede reveal">
+      <div class="l-copy">
+        <span class="kicker">The Vision &nbsp;&middot;&nbsp; Issue No. 01</span>
+        <h1 class="serif">Introducing <em>RootHold</em></h1>
+        <p class="dek">Why we're building an economic-development platform around a single idea &mdash; community. A look at the vision: integrated Foreign-Trade Zone campuses, a network of operating companies, and belonging by design.</p>
+        <div class="meta">
+          <a class="readlink" href="roothold-intro.html">Read the issue <span class="ar">&rarr;</span></a>
+          <span>&middot; 6 min read</span>
+        </div>
+      </div>
+      <div class="l-media"><img src="roothold-campus.jpg" alt="A RootHold campus at dawn"></div>
+    </article>
+  </div>
+</section>
+
+<!-- the latest grid -->
+<section style="padding-top:8px">
+  <div class="wrap">
+    <div class="shead reveal">
+      <h2 class="serif">The Latest</h2>
+      <a class="s-link" href="#subscribe">New issues, regularly &rarr;</a>
+    </div>
+    <div class="grid">
+
+      <article class="card reveal">
+        <a href="surplus-pods.html"><div class="c-media"><img src="lobbypod.jpg" alt="A Surplus Pod in a busy lobby"></div></a>
+        <span class="kicker c-kick">Companies &middot; Retail Technology</span>
+        <h3>Introducing Surplus Pods</h3>
+        <p>The autonomous, 24/7 store that lives inside the buildings where people already are &mdash; turning underused square footage into a premium amenity and a new stream of revenue.</p>
+        <a class="c-read" href="surplus-pods.html">Read &rarr;</a>
+      </article>
+
+      <article class="card up reveal">
+        <div class="c-media"><span class="soon">Coming soon</span><img src="partnership.jpg" alt="Cities and partners at the table"></div>
+        <span class="kicker c-kick">Cities</span>
+        <h3>Why cities compete to be chosen</h3>
+        <p>Inside the new economics of place: how a selective national program flips the leverage in every incentive conversation &mdash; and what forward cities are doing about it.</p>
+        <a class="c-read" href="#subscribe">Subscribe for the drop</a>
+      </article>
+
+      <article class="card up reveal">
+        <div class="c-media"><span class="soon">Coming soon</span><img src="ebm.jpg" alt="A durable, architectural asset"></div>
+        <span class="kicker c-kick">Capital</span>
+        <h3>The anchor economy</h3>
+        <p>Durable assets, a compounding network, and why belonging is a moat &mdash; a field guide for financing partners backing what lasts.</p>
+        <a class="c-read" href="#subscribe">Subscribe for the drop</a>
+      </article>
+
+      <article class="card up reveal">
+        <div class="c-media"><span class="soon">Coming soon</span><img src="whyhero.jpg" alt="A vibrant campus community"></div>
+        <span class="kicker c-kick">Community</span>
+        <h3>Belonging by design</h3>
+        <p>What it means to build a place people organize their lives around &mdash; and how community becomes the DNA of every partnership at RootHold.</p>
+        <a class="c-read" href="#subscribe">Subscribe for the drop</a>
+      </article>
+
+      <article class="card up reveal">
+        <div class="c-media"><span class="soon">Coming soon</span><img src="sweetkiwi.jpg" alt="Founders building on the platform"></div>
+        <span class="kicker c-kick">Founders</span>
+        <h3>Built on the platform</h3>
+        <p>Meet the founders growing inside the RootHold network &mdash; the operators turning a campus and a community into a company at scale.</p>
+        <a class="c-read" href="#subscribe">Subscribe for the drop</a>
+      </article>
+
+      <article class="card up reveal">
+        <div class="c-media"><span class="soon">Coming soon</span><img src="logistics-hub.jpg" alt="A shared cold chain"></div>
+        <span class="kicker c-kick">Infrastructure</span>
+        <h3>The cold chain, shared</h3>
+        <p>One temperature-controlled asset the whole platform runs through &mdash; and the high-growth industries lining up to use it.</p>
+        <a class="c-read" href="#subscribe">Subscribe for the drop</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- be featured -->
+<section class="pitch" id="featured-in">
+  <div class="wrap">
+    <div class="p-copy reveal">
+      <span class="kicker">Be part of the story</span>
+      <h2 class="serif">Get featured in <em>FirstLight</em>.</h2>
+      <p>FirstLight profiles the founders, cities, and capital partners building community that lasts. If you're doing work worth reading about, we'd like to tell it &mdash; with the craft it deserves.</p>
+      <div class="who"><span>Founders</span><span>Cities &amp; EDCs</span><span>Financing Partners</span></div>
+    </div>
+    <div class="p-card reveal">
+      <h3 class="serif">Pitch a story</h3>
+      <p>Tell us what you're building. Selected features run in an upcoming issue and across @firstlightbyrh.</p>
+      <a class="btn" href="index.html#contact" data-persona="Partnership">Get featured &rarr;</a>
+      <a class="btn line" style="margin-left:10px" href="mailto:michael@rootholdinc.com?subject=FirstLight%20feature">Email the editor</a>
+    </div>
+  </div>
+</section>
+
+<!-- subscribe -->
+<section class="sub" id="subscribe">
+  <div class="wrap reveal">
+    <span class="kicker">Never miss an issue</span>
+    <h2 class="serif">Subscribe to FirstLight.</h2>
+    <p>New dispatches on building what lasts &mdash; delivered as they publish. No noise.</p>
+    <form class="sform" id="flForm" action="https://formsubmit.co/michael@rootholdinc.com" method="POST">
+      <input type="hidden" name="_subject" value="New FirstLight subscriber">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="list" value="FirstLight">
+      <input type="email" name="email" placeholder="you@company.com" required aria-label="Email address">
+      <button class="btn" type="submit">Subscribe</button>
+    </form>
+    <p class="fine">By subscribing you agree to receive FirstLight updates from RootHold. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="flfoot">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="fword">First<em>Light</em></div>
+        <p class="ftag">A journal by RootHold on the founders, cities, and partners building community that lasts.</p>
+      </div>
+      <div class="fr">
+        <div class="col">
+          <h4>Read</h4>
+          <a href="#featured">The Latest</a>
+          <a href="roothold-intro.html">Introducing RootHold</a>
+          <a href="surplus-pods.html">Introducing Surplus Pods</a>
+        </div>
+        <div class="col">
+          <h4>Participate</h4>
+          <a href="#featured-in">Get Featured</a>
+          <a href="#subscribe">Subscribe</a>
+          <a href="mailto:michael@rootholdinc.com?subject=FirstLight">Email the editor</a>
+        </div>
+        <div class="col">
+          <h4>RootHold</h4>
+          <a href="index.html">Main site</a>
+          <a href="index.html#streams">The Platform</a>
+          <a href="index.html#contact">Partner with us</a>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>&copy; 2026 RootHold Inc. FirstLight is a publication of RootHold Inc.</span>
+      <a class="ig" href="https://instagram.com/firstlightbyrh" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.12-1.38.66-.66 1.07-1.33 1.38-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.12A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg>
+        @firstlightbyrh
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// reveal on scroll
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+// subscribe via FormSubmit AJAX
+var f=document.getElementById('flForm');
+if(f){f.addEventListener('submit',function(ev){ev.preventDefault();var b=f.querySelector('button');var t=b.textContent;b.textContent='Subscribing…';
+  fetch('https://formsubmit.co/ajax/michael@rootholdinc.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+    body:JSON.stringify({email:f.email.value,_subject:'New FirstLight subscriber',list:'FirstLight'})})
+  .then(function(r){return r.json();}).then(function(){f.innerHTML='<p style="font-weight:600;color:#153A2C">Welcome to FirstLight — check your inbox to confirm.</p>';})
+  .catch(function(){b.textContent=t;alert('Something went wrong. Please email michael@rootholdinc.com');});});}
+</script>
+</body>
+</html>
