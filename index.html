@@ -942,6 +942,24 @@ if (mcta) {
 
 // reduced motion: pause the autoplay hero video
 if (matchMedia('(prefers-reduced-motion: reduce)').matches && bv) bv.pause();
+
+// Carousel default-position workaround: rails must always open on the first card.
+// Guards against (a) browser scroll-restoration of overflow containers on refresh,
+// (b) bfcache restores via back/forward (pageshow), and (c) late layout shifts as images decode.
+(function(){
+  var ids = ['portRail','newsRail','testiRail'];
+  var lockUntil = 0, interacted = false, rafOn = false;
+  function reset(){ ids.forEach(function(id){ var r = document.getElementById(id); if (r && r.scrollLeft !== 0) r.scrollLeft = 0; }); }
+  function loop(){ rafOn = false; if (interacted) return; reset(); if (performance.now() < lockUntil){ rafOn = true; requestAnimationFrame(loop); } }
+  function lock(ms){ lockUntil = performance.now() + (ms || 1500); reset(); if (!rafOn){ rafOn = true; requestAnimationFrame(loop); } }
+  function markInteracted(){ interacted = true; }
+  // release the pin only when the user actually engages a rail or its arrows
+  ids.forEach(function(id){ var r = document.getElementById(id); if (r){ ['wheel','touchstart','pointerdown'].forEach(function(ev){ r.addEventListener(ev, markInteracted, {passive:true}); }); } });
+  document.querySelectorAll('#portPrev,#portNext,#newsPrev,#newsNext,#testiPrev,#testiNext').forEach(function(b){ b.addEventListener('click', markInteracted); });
+  lock(1500);
+  addEventListener('load', function(){ lock(1500); });
+  addEventListener('pageshow', function(){ interacted = false; lock(1500); });
+})();
 </script>
 </body>
 </html>
