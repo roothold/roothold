@@ -840,7 +840,8 @@ if (pRail) {
   const pCards = pRail.querySelectorAll('.pc');
   const pCount = document.getElementById('portCount');
   const step = () => pCards.length > 1 ? (pCards[1].getBoundingClientRect().left - pCards[0].getBoundingClientRect().left) : pRail.clientWidth;
-  const upd = () => { const i = Math.round(pRail.scrollLeft / step()); pCount.textContent = Math.min(i + 1, pCards.length) + ' / ' + pCards.length; };
+  const upd = () => { const s = step(); const i = s > 0 ? Math.round(pRail.scrollLeft / s) : 0; pCount.textContent = Math.min(Math.max(i, 0) + 1, pCards.length) + ' / ' + pCards.length; };
+  pRail._sync = upd;
   document.getElementById('portPrev').addEventListener('click', () => pRail.scrollBy({left: -step(), behavior: 'smooth'}));
   document.getElementById('portNext').addEventListener('click', () => pRail.scrollBy({left: step(), behavior: 'smooth'}));
   let pt; pRail.addEventListener('scroll', () => { clearTimeout(pt); pt = setTimeout(upd, 90); }, {passive: true});
@@ -855,7 +856,8 @@ if (tRail) {
   const tDots = document.getElementById('testiDots');
   const tStep = () => tCards.length > 1 ? (tCards[1].getBoundingClientRect().left - tCards[0].getBoundingClientRect().left) : tRail.clientWidth;
   tCards.forEach((_, i) => { const b = document.createElement('button'); if (i === 0) b.classList.add('on'); b.setAttribute('aria-label', 'Quote ' + (i + 1)); b.addEventListener('click', () => tRail.scrollTo({left: i * tStep(), behavior: 'smooth'})); tDots.appendChild(b); });
-  const tUpd = () => { const i = Math.min(Math.round(tRail.scrollLeft / tStep()), tCards.length - 1); [...tDots.children].forEach((d, j) => d.classList.toggle('on', j === i)); };
+  const tUpd = () => { const s = tStep(); const i = Math.min(Math.max(s > 0 ? Math.round(tRail.scrollLeft / s) : 0, 0), tCards.length - 1); [...tDots.children].forEach((d, j) => d.classList.toggle('on', j === i)); };
+  tRail._sync = tUpd;
   document.getElementById('testiPrev').addEventListener('click', () => tRail.scrollBy({left: -tStep(), behavior: 'smooth'}));
   document.getElementById('testiNext').addEventListener('click', () => tRail.scrollBy({left: tStep(), behavior: 'smooth'}));
   let tt; tRail.addEventListener('scroll', () => { clearTimeout(tt); tt = setTimeout(tUpd, 90); }, {passive: true});
@@ -873,7 +875,8 @@ if (nRail) {
   const nDots = document.getElementById('newsDots');
   const nStep = () => nCards.length > 1 ? (nCards[1].getBoundingClientRect().left - nCards[0].getBoundingClientRect().left) : nRail.clientWidth;
   nCards.forEach((_, i) => { const b = document.createElement('button'); if (i === 0) b.classList.add('on'); b.setAttribute('aria-label', 'Article ' + (i + 1)); b.addEventListener('click', () => nRail.scrollTo({left: i * nStep(), behavior: 'smooth'})); nDots.appendChild(b); });
-  const nUpd = () => { const i = Math.min(Math.round(nRail.scrollLeft / nStep()), nCards.length - 1); [...nDots.children].forEach((d, j) => d.classList.toggle('on', j === i)); };
+  const nUpd = () => { const s = nStep(); const i = Math.min(Math.max(s > 0 ? Math.round(nRail.scrollLeft / s) : 0, 0), nCards.length - 1); [...nDots.children].forEach((d, j) => d.classList.toggle('on', j === i)); };
+  nRail._sync = nUpd;
   document.getElementById('newsPrev').addEventListener('click', () => nRail.scrollBy({left: -nStep(), behavior: 'smooth'}));
   document.getElementById('newsNext').addEventListener('click', () => nRail.scrollBy({left: nStep(), behavior: 'smooth'}));
   let nt; nRail.addEventListener('scroll', () => { clearTimeout(nt); nt = setTimeout(nUpd, 90); }, {passive: true});
@@ -948,17 +951,24 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches && bv) bv.pause();
 // (b) bfcache restores via back/forward (pageshow), and (c) late layout shifts as images decode.
 (function(){
   var ids = ['portRail','newsRail','testiRail'];
-  var lockUntil = 0, interacted = false, rafOn = false;
+  var loaded = false, interacted = false, rafOn = false, lockUntil = 0;
   function reset(){ ids.forEach(function(id){ var r = document.getElementById(id); if (r && r.scrollLeft !== 0) r.scrollLeft = 0; }); }
-  function loop(){ rafOn = false; if (interacted) return; reset(); if (performance.now() < lockUntil){ rafOn = true; requestAnimationFrame(loop); } }
-  function lock(ms){ lockUntil = performance.now() + (ms || 1500); reset(); if (!rafOn){ rafOn = true; requestAnimationFrame(loop); } }
+  // Force each carousel's counter/dots to recompute from the pinned (0) position.
+  // Needed because the per-frame pin keeps clearing the counter's debounce, so it never fires on its own.
+  function resync(){ if (interacted) return; ids.forEach(function(id){ var r = document.getElementById(id); if (r){ r.scrollLeft = 0; if (r._sync) r._sync(); else r.dispatchEvent(new Event('scroll')); } }); }
+  // keep pinning every frame until the page has fully loaded AND a short buffer has passed —
+  // this closes the gap created when the hero video delays the `load` event.
+  function loop(){ rafOn = false; if (interacted) return; reset(); if (!loaded || performance.now() < lockUntil){ rafOn = true; requestAnimationFrame(loop); } }
+  function pump(ms){ lockUntil = Math.max(lockUntil, performance.now() + (ms || 1500)); reset(); if (!rafOn){ rafOn = true; requestAnimationFrame(loop); } }
   function markInteracted(){ interacted = true; }
   // release the pin only when the user actually engages a rail or its arrows
   ids.forEach(function(id){ var r = document.getElementById(id); if (r){ ['wheel','touchstart','pointerdown'].forEach(function(ev){ r.addEventListener(ev, markInteracted, {passive:true}); }); } });
   document.querySelectorAll('#portPrev,#portNext,#newsPrev,#newsNext,#testiPrev,#testiNext').forEach(function(b){ b.addEventListener('click', markInteracted); });
-  lock(1500);
-  addEventListener('load', function(){ lock(1500); });
-  addEventListener('pageshow', function(){ interacted = false; lock(1500); });
+  pump(1500);
+  [400, 1000, 1700, 2600].forEach(function(t){ setTimeout(resync, t); }); // recompute counters once things settle
+  addEventListener('load', function(){ loaded = true; pump(1500); [80, 500, 1200].forEach(function(t){ setTimeout(resync, t); }); });
+  addEventListener('pageshow', function(){ interacted = false; loaded = true; pump(1500); setTimeout(resync, 120); });
+  setTimeout(function(){ loaded = true; }, 8000); // safety cap if load never fires
 })();
 </script>
 </body>
